@@ -139,6 +139,146 @@
       "answer": 3,
       "category": "Science",
       "difficulty": "hard"
+    },
+    {
+      "text": "What is the capital of Japan?",
+      "choices": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
+      "answer": 2,
+      "category": "Geography",
+      "difficulty": "easy"
+    },
+    {
+      "text": "How many bones are in the adult human body?",
+      "choices": ["186", "206", "226", "246"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "medium"
+    },
+    {
+      "text": "Who wrote 'The Great Gatsby'?",
+      "choices": ["Hemingway", "Fitzgerald", "Steinbeck", "Faulkner"],
+      "answer": 1,
+      "category": "Literature",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What does HTML stand for?",
+      "choices": ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
+      "answer": 0,
+      "category": "Technology",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which artist painted 'The Starry Night'?",
+      "choices": ["Monet", "Picasso", "Van Gogh", "Rembrandt"],
+      "answer": 2,
+      "category": "Art",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What is the largest desert in the world?",
+      "choices": ["Sahara", "Arabian", "Gobi", "Antarctic"],
+      "answer": 3,
+      "category": "Geography",
+      "difficulty": "hard"
+    },
+    {
+      "text": "Who invented the telephone?",
+      "choices": ["Edison", "Bell", "Tesla", "Marconi"],
+      "answer": 1,
+      "category": "History",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What is the freezing point of water in Fahrenheit?",
+      "choices": ["0", "32", "100", "212"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which country invented paper?",
+      "choices": ["Japan", "India", "China", "Egypt"],
+      "answer": 2,
+      "category": "History",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the square root of 144?",
+      "choices": ["10", "11", "12", "14"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Who sculpted 'David'?",
+      "choices": ["Da Vinci", "Michelangelo", "Bernini", "Rodin"],
+      "answer": 1,
+      "category": "Art",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the most spoken language in the world by native speakers?",
+      "choices": ["English", "Spanish", "Mandarin", "Hindi"],
+      "answer": 2,
+      "category": "Geography",
+      "difficulty": "medium"
+    },
+    {
+      "text": "Who wrote 'To Kill a Mockingbird'?",
+      "choices": ["Harper Lee", "Mark Twain", "John Steinbeck", "Toni Morrison"],
+      "answer": 0,
+      "category": "Literature",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What planet has the most moons?",
+      "choices": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "hard"
+    },
+    {
+      "text": "In what year did the Berlin Wall fall?",
+      "choices": ["1987", "1988", "1989", "1990"],
+      "answer": 2,
+      "category": "History",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What does CPU stand for?",
+      "choices": ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Core Processing Unit"],
+      "answer": 0,
+      "category": "Technology",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which ocean is the Mariana Trench in?",
+      "choices": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": 2,
+      "category": "Geography",
+      "difficulty": "hard"
+    },
+    {
+      "text": "What gas do plants absorb from the atmosphere?",
+      "choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Who founded Microsoft?",
+      "choices": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
+      "answer": 1,
+      "category": "Technology",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which ancient wonder was located in Alexandria?",
+      "choices": ["Colossus", "Lighthouse", "Hanging Gardens", "Temple of Artemis"],
+      "answer": 1,
+      "category": "History",
+      "difficulty": "hard"
     }
   ]
 }
