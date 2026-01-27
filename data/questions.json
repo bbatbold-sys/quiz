@@ -1,0 +1,144 @@
+{
+  "questions": [
+    {
+      "text": "What is the capital of France?",
+      "choices": ["London", "Berlin", "Paris", "Madrid"],
+      "answer": 2,
+      "category": "Geography",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which planet is known as the Red Planet?",
+      "choices": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What is the largest ocean on Earth?",
+      "choices": ["Atlantic", "Indian", "Arctic", "Pacific"],
+      "answer": 3,
+      "category": "Geography",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Who wrote 'Romeo and Juliet'?",
+      "choices": ["Dickens", "Shakespeare", "Austen", "Twain"],
+      "answer": 1,
+      "category": "Literature",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What is the chemical symbol for water?",
+      "choices": ["O2", "CO2", "H2O", "NaCl"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which country has the most natural lakes?",
+      "choices": ["USA", "Brazil", "Canada", "Russia"],
+      "answer": 2,
+      "category": "Geography",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the powerhouse of the cell?",
+      "choices": ["Nucleus", "Ribosome", "Mitochondria", "Golgi body"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "medium"
+    },
+    {
+      "text": "Who painted the Mona Lisa?",
+      "choices": ["Michelangelo", "Da Vinci", "Raphael", "Donatello"],
+      "answer": 1,
+      "category": "Art",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What year did World War II end?",
+      "choices": ["1943", "1944", "1945", "1946"],
+      "answer": 2,
+      "category": "History",
+      "difficulty": "medium"
+    },
+    {
+      "text": "Which element has the atomic number 79?",
+      "choices": ["Silver", "Gold", "Platinum", "Copper"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the longest river in the world?",
+      "choices": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+      "answer": 1,
+      "category": "Geography",
+      "difficulty": "medium"
+    },
+    {
+      "text": "Who developed the theory of relativity?",
+      "choices": ["Newton", "Einstein", "Hawking", "Bohr"],
+      "answer": 1,
+      "category": "Science",
+      "difficulty": "medium"
+    },
+    {
+      "text": "In which year was the first iPhone released?",
+      "choices": ["2005", "2006", "2007", "2008"],
+      "answer": 2,
+      "category": "Technology",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the hardest natural substance on Earth?",
+      "choices": ["Quartz", "Topaz", "Diamond", "Sapphire"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "easy"
+    },
+    {
+      "text": "Which author wrote '1984'?",
+      "choices": ["Huxley", "Orwell", "Bradbury", "Asimov"],
+      "answer": 1,
+      "category": "Literature",
+      "difficulty": "medium"
+    },
+    {
+      "text": "What is the smallest country in the world by area?",
+      "choices": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+      "answer": 1,
+      "category": "Geography",
+      "difficulty": "hard"
+    },
+    {
+      "text": "What is the speed of light in km/s (approximately)?",
+      "choices": ["100,000", "200,000", "300,000", "400,000"],
+      "answer": 2,
+      "category": "Science",
+      "difficulty": "hard"
+    },
+    {
+      "text": "Who was the first woman to win a Nobel Prize?",
+      "choices": ["Rosalind Franklin", "Marie Curie", "Dorothy Hodgkin", "Ada Lovelace"],
+      "answer": 1,
+      "category": "History",
+      "difficulty": "hard"
+    },
+    {
+      "text": "Which programming language was created by Guido van Rossum?",
+      "choices": ["Java", "C++", "Python", "Ruby"],
+      "answer": 2,
+      "category": "Technology",
+      "difficulty": "easy"
+    },
+    {
+      "text": "What is the rarest blood type?",
+      "choices": ["O-", "A-", "B-", "AB-"],
+      "answer": 3,
+      "category": "Science",
+      "difficulty": "hard"
+    }
+  ]
+}
