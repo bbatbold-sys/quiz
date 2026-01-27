@@ -1,284 +1,129 @@
 {
   "questions": [
-    {
-      "text": "What is the capital of France?",
-      "choices": ["London", "Berlin", "Paris", "Madrid"],
-      "answer": 2,
-      "category": "Geography",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which planet is known as the Red Planet?",
-      "choices": ["Venus", "Mars", "Jupiter", "Saturn"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What is the largest ocean on Earth?",
-      "choices": ["Atlantic", "Indian", "Arctic", "Pacific"],
-      "answer": 3,
-      "category": "Geography",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Who wrote 'Romeo and Juliet'?",
-      "choices": ["Dickens", "Shakespeare", "Austen", "Twain"],
-      "answer": 1,
-      "category": "Literature",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What is the chemical symbol for water?",
-      "choices": ["O2", "CO2", "H2O", "NaCl"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which country has the most natural lakes?",
-      "choices": ["USA", "Brazil", "Canada", "Russia"],
-      "answer": 2,
-      "category": "Geography",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the powerhouse of the cell?",
-      "choices": ["Nucleus", "Ribosome", "Mitochondria", "Golgi body"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "medium"
-    },
-    {
-      "text": "Who painted the Mona Lisa?",
-      "choices": ["Michelangelo", "Da Vinci", "Raphael", "Donatello"],
-      "answer": 1,
-      "category": "Art",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What year did World War II end?",
-      "choices": ["1943", "1944", "1945", "1946"],
-      "answer": 2,
-      "category": "History",
-      "difficulty": "medium"
-    },
-    {
-      "text": "Which element has the atomic number 79?",
-      "choices": ["Silver", "Gold", "Platinum", "Copper"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the longest river in the world?",
-      "choices": ["Amazon", "Nile", "Yangtze", "Mississippi"],
-      "answer": 1,
-      "category": "Geography",
-      "difficulty": "medium"
-    },
-    {
-      "text": "Who developed the theory of relativity?",
-      "choices": ["Newton", "Einstein", "Hawking", "Bohr"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "medium"
-    },
-    {
-      "text": "In which year was the first iPhone released?",
-      "choices": ["2005", "2006", "2007", "2008"],
-      "answer": 2,
-      "category": "Technology",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the hardest natural substance on Earth?",
-      "choices": ["Quartz", "Topaz", "Diamond", "Sapphire"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which author wrote '1984'?",
-      "choices": ["Huxley", "Orwell", "Bradbury", "Asimov"],
-      "answer": 1,
-      "category": "Literature",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the smallest country in the world by area?",
-      "choices": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
-      "answer": 1,
-      "category": "Geography",
-      "difficulty": "hard"
-    },
-    {
-      "text": "What is the speed of light in km/s (approximately)?",
-      "choices": ["100,000", "200,000", "300,000", "400,000"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "hard"
-    },
-    {
-      "text": "Who was the first woman to win a Nobel Prize?",
-      "choices": ["Rosalind Franklin", "Marie Curie", "Dorothy Hodgkin", "Ada Lovelace"],
-      "answer": 1,
-      "category": "History",
-      "difficulty": "hard"
-    },
-    {
-      "text": "Which programming language was created by Guido van Rossum?",
-      "choices": ["Java", "C++", "Python", "Ruby"],
-      "answer": 2,
-      "category": "Technology",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What is the rarest blood type?",
-      "choices": ["O-", "A-", "B-", "AB-"],
-      "answer": 3,
-      "category": "Science",
-      "difficulty": "hard"
-    },
-    {
-      "text": "What is the capital of Japan?",
-      "choices": ["Seoul", "Beijing", "Tokyo", "Bangkok"],
-      "answer": 2,
-      "category": "Geography",
-      "difficulty": "easy"
-    },
-    {
-      "text": "How many bones are in the adult human body?",
-      "choices": ["186", "206", "226", "246"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "medium"
-    },
-    {
-      "text": "Who wrote 'The Great Gatsby'?",
-      "choices": ["Hemingway", "Fitzgerald", "Steinbeck", "Faulkner"],
-      "answer": 1,
-      "category": "Literature",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What does HTML stand for?",
-      "choices": ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"],
-      "answer": 0,
-      "category": "Technology",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which artist painted 'The Starry Night'?",
-      "choices": ["Monet", "Picasso", "Van Gogh", "Rembrandt"],
-      "answer": 2,
-      "category": "Art",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What is the largest desert in the world?",
-      "choices": ["Sahara", "Arabian", "Gobi", "Antarctic"],
-      "answer": 3,
-      "category": "Geography",
-      "difficulty": "hard"
-    },
-    {
-      "text": "Who invented the telephone?",
-      "choices": ["Edison", "Bell", "Tesla", "Marconi"],
-      "answer": 1,
-      "category": "History",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What is the freezing point of water in Fahrenheit?",
-      "choices": ["0", "32", "100", "212"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which country invented paper?",
-      "choices": ["Japan", "India", "China", "Egypt"],
-      "answer": 2,
-      "category": "History",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the square root of 144?",
-      "choices": ["10", "11", "12", "14"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Who sculpted 'David'?",
-      "choices": ["Da Vinci", "Michelangelo", "Bernini", "Rodin"],
-      "answer": 1,
-      "category": "Art",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What is the most spoken language in the world by native speakers?",
-      "choices": ["English", "Spanish", "Mandarin", "Hindi"],
-      "answer": 2,
-      "category": "Geography",
-      "difficulty": "medium"
-    },
-    {
-      "text": "Who wrote 'To Kill a Mockingbird'?",
-      "choices": ["Harper Lee", "Mark Twain", "John Steinbeck", "Toni Morrison"],
-      "answer": 0,
-      "category": "Literature",
-      "difficulty": "easy"
-    },
-    {
-      "text": "What planet has the most moons?",
-      "choices": ["Jupiter", "Saturn", "Uranus", "Neptune"],
-      "answer": 1,
-      "category": "Science",
-      "difficulty": "hard"
-    },
-    {
-      "text": "In what year did the Berlin Wall fall?",
-      "choices": ["1987", "1988", "1989", "1990"],
-      "answer": 2,
-      "category": "History",
-      "difficulty": "medium"
-    },
-    {
-      "text": "What does CPU stand for?",
-      "choices": ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Core Processing Unit"],
-      "answer": 0,
-      "category": "Technology",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which ocean is the Mariana Trench in?",
-      "choices": ["Atlantic", "Indian", "Pacific", "Arctic"],
-      "answer": 2,
-      "category": "Geography",
-      "difficulty": "hard"
-    },
-    {
-      "text": "What gas do plants absorb from the atmosphere?",
-      "choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-      "answer": 2,
-      "category": "Science",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Who founded Microsoft?",
-      "choices": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
-      "answer": 1,
-      "category": "Technology",
-      "difficulty": "easy"
-    },
-    {
-      "text": "Which ancient wonder was located in Alexandria?",
-      "choices": ["Colossus", "Lighthouse", "Hanging Gardens", "Temple of Artemis"],
-      "answer": 1,
-      "category": "History",
-      "difficulty": "hard"
-    }
+    {"text": "What is the capital of France?", "choices": ["London", "Berlin", "Paris", "Madrid"], "answer": 2, "category": "Geography", "difficulty": "easy"},
+    {"text": "What is the largest ocean on Earth?", "choices": ["Atlantic", "Indian", "Arctic", "Pacific"], "answer": 3, "category": "Geography", "difficulty": "easy"},
+    {"text": "Which country has the most natural lakes?", "choices": ["USA", "Brazil", "Canada", "Russia"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "What is the longest river in the world?", "choices": ["Amazon", "Nile", "Yangtze", "Mississippi"], "answer": 1, "category": "Geography", "difficulty": "medium"},
+    {"text": "What is the smallest country in the world by area?", "choices": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"], "answer": 1, "category": "Geography", "difficulty": "hard"},
+    {"text": "What is the capital of Japan?", "choices": ["Seoul", "Beijing", "Tokyo", "Bangkok"], "answer": 2, "category": "Geography", "difficulty": "easy"},
+    {"text": "What is the largest desert in the world?", "choices": ["Sahara", "Arabian", "Gobi", "Antarctic"], "answer": 3, "category": "Geography", "difficulty": "hard"},
+    {"text": "What is the most spoken language in the world by native speakers?", "choices": ["English", "Spanish", "Mandarin", "Hindi"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "Which ocean is the Mariana Trench in?", "choices": ["Atlantic", "Indian", "Pacific", "Arctic"], "answer": 2, "category": "Geography", "difficulty": "hard"},
+    {"text": "What is the tallest mountain in the world?", "choices": ["K2", "Kangchenjunga", "Everest", "Lhotse"], "answer": 2, "category": "Geography", "difficulty": "easy"},
+    {"text": "Which continent has the most countries?", "choices": ["Asia", "Europe", "Africa", "South America"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "What is the capital of Australia?", "choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "Which river flows through London?", "choices": ["Seine", "Danube", "Thames", "Rhine"], "answer": 2, "category": "Geography", "difficulty": "easy"},
+    {"text": "What is the largest lake in Africa?", "choices": ["Lake Chad", "Lake Tanganyika", "Lake Victoria", "Lake Malawi"], "answer": 2, "category": "Geography", "difficulty": "hard"},
+    {"text": "Which country has the longest coastline?", "choices": ["Australia", "Russia", "Canada", "Indonesia"], "answer": 2, "category": "Geography", "difficulty": "hard"},
+    {"text": "What is the capital of Brazil?", "choices": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "Which country is known as the Land of the Rising Sun?", "choices": ["China", "Japan", "Thailand", "South Korea"], "answer": 1, "category": "Geography", "difficulty": "easy"},
+    {"text": "What is the deepest lake in the world?", "choices": ["Lake Superior", "Lake Baikal", "Lake Tanganyika", "Caspian Sea"], "answer": 1, "category": "Geography", "difficulty": "hard"},
+    {"text": "Which two countries share the longest international border?", "choices": ["USA and Mexico", "Russia and China", "USA and Canada", "Argentina and Chile"], "answer": 2, "category": "Geography", "difficulty": "medium"},
+    {"text": "What is the smallest continent by land area?", "choices": ["Europe", "Antarctica", "Australia", "South America"], "answer": 2, "category": "Geography", "difficulty": "easy"},
+
+    {"text": "Which planet is known as the Red Planet?", "choices": ["Venus", "Mars", "Jupiter", "Saturn"], "answer": 1, "category": "Science", "difficulty": "easy"},
+    {"text": "What is the chemical symbol for water?", "choices": ["O2", "CO2", "H2O", "NaCl"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What is the powerhouse of the cell?", "choices": ["Nucleus", "Ribosome", "Mitochondria", "Golgi body"], "answer": 2, "category": "Science", "difficulty": "medium"},
+    {"text": "Which element has the atomic number 79?", "choices": ["Silver", "Gold", "Platinum", "Copper"], "answer": 1, "category": "Science", "difficulty": "medium"},
+    {"text": "Who developed the theory of relativity?", "choices": ["Newton", "Einstein", "Hawking", "Bohr"], "answer": 1, "category": "Science", "difficulty": "medium"},
+    {"text": "What is the hardest natural substance on Earth?", "choices": ["Quartz", "Topaz", "Diamond", "Sapphire"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What is the speed of light in km/s (approximately)?", "choices": ["100,000", "200,000", "300,000", "400,000"], "answer": 2, "category": "Science", "difficulty": "hard"},
+    {"text": "What is the rarest blood type?", "choices": ["O-", "A-", "B-", "AB-"], "answer": 3, "category": "Science", "difficulty": "hard"},
+    {"text": "How many bones are in the adult human body?", "choices": ["186", "206", "226", "246"], "answer": 1, "category": "Science", "difficulty": "medium"},
+    {"text": "What is the freezing point of water in Fahrenheit?", "choices": ["0", "32", "100", "212"], "answer": 1, "category": "Science", "difficulty": "easy"},
+    {"text": "What is the square root of 144?", "choices": ["10", "11", "12", "14"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What gas do plants absorb from the atmosphere?", "choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What planet has the most moons?", "choices": ["Jupiter", "Saturn", "Uranus", "Neptune"], "answer": 1, "category": "Science", "difficulty": "hard"},
+    {"text": "What is the chemical symbol for sodium?", "choices": ["So", "Sd", "Na", "No"], "answer": 2, "category": "Science", "difficulty": "medium"},
+    {"text": "What is the closest star to Earth?", "choices": ["Proxima Centauri", "The Sun", "Sirius", "Alpha Centauri"], "answer": 1, "category": "Science", "difficulty": "medium"},
+    {"text": "How many chromosomes do humans have?", "choices": ["23", "44", "46", "48"], "answer": 2, "category": "Science", "difficulty": "medium"},
+    {"text": "What is the largest organ in the human body?", "choices": ["Liver", "Brain", "Skin", "Heart"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What element does 'O' represent on the periodic table?", "choices": ["Osmium", "Oganesson", "Oxygen", "Olivine"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What force keeps planets in orbit around the Sun?", "choices": ["Magnetism", "Friction", "Gravity", "Inertia"], "answer": 2, "category": "Science", "difficulty": "easy"},
+    {"text": "What is the pH of pure water?", "choices": ["0", "5", "7", "14"], "answer": 2, "category": "Science", "difficulty": "hard"},
+
+    {"text": "What year did World War II end?", "choices": ["1943", "1944", "1945", "1946"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "Who was the first woman to win a Nobel Prize?", "choices": ["Rosalind Franklin", "Marie Curie", "Dorothy Hodgkin", "Ada Lovelace"], "answer": 1, "category": "History", "difficulty": "hard"},
+    {"text": "Who invented the telephone?", "choices": ["Edison", "Bell", "Tesla", "Marconi"], "answer": 1, "category": "History", "difficulty": "easy"},
+    {"text": "Which country invented paper?", "choices": ["Japan", "India", "China", "Egypt"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "In what year did the Berlin Wall fall?", "choices": ["1987", "1988", "1989", "1990"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "Which ancient wonder was located in Alexandria?", "choices": ["Colossus", "Lighthouse", "Hanging Gardens", "Temple of Artemis"], "answer": 1, "category": "History", "difficulty": "hard"},
+    {"text": "Who was the first president of the United States?", "choices": ["Adams", "Jefferson", "Washington", "Lincoln"], "answer": 2, "category": "History", "difficulty": "easy"},
+    {"text": "In which year did the Titanic sink?", "choices": ["1910", "1911", "1912", "1913"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "Which empire built Machu Picchu?", "choices": ["Aztec", "Maya", "Inca", "Olmec"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "Who discovered penicillin?", "choices": ["Pasteur", "Fleming", "Lister", "Koch"], "answer": 1, "category": "History", "difficulty": "medium"},
+    {"text": "What year did World War I begin?", "choices": ["1912", "1913", "1914", "1915"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "Who was the ancient Egyptian queen known for her beauty?", "choices": ["Nefertiti", "Cleopatra", "Hatshepsut", "Isis"], "answer": 1, "category": "History", "difficulty": "easy"},
+    {"text": "Which civilization built the Colosseum?", "choices": ["Greek", "Roman", "Egyptian", "Persian"], "answer": 1, "category": "History", "difficulty": "easy"},
+    {"text": "In which year did humans first land on the Moon?", "choices": ["1967", "1968", "1969", "1970"], "answer": 2, "category": "History", "difficulty": "easy"},
+    {"text": "Who wrote the Declaration of Independence?", "choices": ["Washington", "Adams", "Jefferson", "Franklin"], "answer": 2, "category": "History", "difficulty": "medium"},
+    {"text": "What was the longest war in history?", "choices": ["Hundred Years War", "Thirty Years War", "Reconquista", "Punic Wars"], "answer": 2, "category": "History", "difficulty": "hard"},
+    {"text": "Which country was the first to grant women the right to vote?", "choices": ["USA", "UK", "New Zealand", "Australia"], "answer": 2, "category": "History", "difficulty": "hard"},
+    {"text": "Who was the leader of the Soviet Union during WWII?", "choices": ["Lenin", "Stalin", "Khrushchev", "Trotsky"], "answer": 1, "category": "History", "difficulty": "medium"},
+    {"text": "What ancient city was destroyed by the eruption of Mount Vesuvius?", "choices": ["Rome", "Pompeii", "Athens", "Carthage"], "answer": 1, "category": "History", "difficulty": "easy"},
+    {"text": "Which explorer first circumnavigated the globe?", "choices": ["Columbus", "Magellan", "Drake", "Cook"], "answer": 1, "category": "History", "difficulty": "hard"},
+
+    {"text": "Who wrote 'Romeo and Juliet'?", "choices": ["Dickens", "Shakespeare", "Austen", "Twain"], "answer": 1, "category": "Literature", "difficulty": "easy"},
+    {"text": "Which author wrote '1984'?", "choices": ["Huxley", "Orwell", "Bradbury", "Asimov"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "Who wrote 'The Great Gatsby'?", "choices": ["Hemingway", "Fitzgerald", "Steinbeck", "Faulkner"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "Who wrote 'To Kill a Mockingbird'?", "choices": ["Harper Lee", "Mark Twain", "John Steinbeck", "Toni Morrison"], "answer": 0, "category": "Literature", "difficulty": "easy"},
+    {"text": "Who wrote 'Pride and Prejudice'?", "choices": ["Bronte", "Austen", "Eliot", "Shelley"], "answer": 1, "category": "Literature", "difficulty": "easy"},
+    {"text": "Which novel begins with 'Call me Ishmael'?", "choices": ["Moby Dick", "Treasure Island", "The Old Man and the Sea", "Lord Jim"], "answer": 0, "category": "Literature", "difficulty": "medium"},
+    {"text": "Who wrote 'The Odyssey'?", "choices": ["Sophocles", "Homer", "Virgil", "Euripides"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "Who wrote 'War and Peace'?", "choices": ["Dostoevsky", "Tolstoy", "Chekhov", "Pushkin"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "What is the first book of the Bible?", "choices": ["Exodus", "Genesis", "Leviticus", "Numbers"], "answer": 1, "category": "Literature", "difficulty": "easy"},
+    {"text": "Who wrote 'The Divine Comedy'?", "choices": ["Dante", "Petrarch", "Boccaccio", "Virgil"], "answer": 0, "category": "Literature", "difficulty": "hard"},
+    {"text": "Who wrote 'Hamlet'?", "choices": ["Marlowe", "Shakespeare", "Jonson", "Milton"], "answer": 1, "category": "Literature", "difficulty": "easy"},
+    {"text": "Which novel features the character Jay Gatsby?", "choices": ["The Sun Also Rises", "The Great Gatsby", "Tender Is the Night", "This Side of Paradise"], "answer": 1, "category": "Literature", "difficulty": "easy"},
+    {"text": "Who wrote 'One Hundred Years of Solitude'?", "choices": ["Borges", "Marquez", "Allende", "Neruda"], "answer": 1, "category": "Literature", "difficulty": "hard"},
+    {"text": "What genre is '1984' by George Orwell?", "choices": ["Romance", "Comedy", "Dystopian", "Mystery"], "answer": 2, "category": "Literature", "difficulty": "easy"},
+    {"text": "Who wrote 'The Catcher in the Rye'?", "choices": ["Kerouac", "Salinger", "Vonnegut", "Updike"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "In which Shakespeare play does the character Prospero appear?", "choices": ["Othello", "The Tempest", "King Lear", "Macbeth"], "answer": 1, "category": "Literature", "difficulty": "hard"},
+    {"text": "Who wrote 'Crime and Punishment'?", "choices": ["Tolstoy", "Dostoevsky", "Gogol", "Turgenev"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "What is the name of the fictional land in 'The Lord of the Rings'?", "choices": ["Narnia", "Westeros", "Middle-earth", "Hogwarts"], "answer": 2, "category": "Literature", "difficulty": "easy"},
+    {"text": "Who wrote 'Brave New World'?", "choices": ["Orwell", "Huxley", "Wells", "Bradbury"], "answer": 1, "category": "Literature", "difficulty": "medium"},
+    {"text": "Which poet wrote 'The Raven'?", "choices": ["Whitman", "Dickinson", "Poe", "Frost"], "answer": 2, "category": "Literature", "difficulty": "hard"},
+
+    {"text": "Who painted the Mona Lisa?", "choices": ["Michelangelo", "Da Vinci", "Raphael", "Donatello"], "answer": 1, "category": "Art", "difficulty": "easy"},
+    {"text": "Which artist painted 'The Starry Night'?", "choices": ["Monet", "Picasso", "Van Gogh", "Rembrandt"], "answer": 2, "category": "Art", "difficulty": "easy"},
+    {"text": "Who sculpted 'David'?", "choices": ["Da Vinci", "Michelangelo", "Bernini", "Rodin"], "answer": 1, "category": "Art", "difficulty": "medium"},
+    {"text": "Which art movement is Salvador Dali associated with?", "choices": ["Impressionism", "Cubism", "Surrealism", "Pop Art"], "answer": 2, "category": "Art", "difficulty": "medium"},
+    {"text": "Who painted 'The Persistence of Memory'?", "choices": ["Picasso", "Dali", "Magritte", "Miro"], "answer": 1, "category": "Art", "difficulty": "medium"},
+    {"text": "What painting is also known as 'La Gioconda'?", "choices": ["The Last Supper", "Mona Lisa", "Girl with a Pearl Earring", "The Birth of Venus"], "answer": 1, "category": "Art", "difficulty": "medium"},
+    {"text": "Which artist cut off part of his own ear?", "choices": ["Monet", "Cezanne", "Van Gogh", "Gauguin"], "answer": 2, "category": "Art", "difficulty": "easy"},
+    {"text": "Who painted the ceiling of the Sistine Chapel?", "choices": ["Raphael", "Da Vinci", "Michelangelo", "Caravaggio"], "answer": 2, "category": "Art", "difficulty": "easy"},
+    {"text": "What art movement did Claude Monet help start?", "choices": ["Impressionism", "Realism", "Romanticism", "Baroque"], "answer": 0, "category": "Art", "difficulty": "medium"},
+    {"text": "Who painted 'Guernica'?", "choices": ["Dali", "Picasso", "Goya", "Miro"], "answer": 1, "category": "Art", "difficulty": "medium"},
+    {"text": "Which artist is famous for painting Campbell's Soup cans?", "choices": ["Lichtenstein", "Warhol", "Haring", "Basquiat"], "answer": 1, "category": "Art", "difficulty": "easy"},
+    {"text": "What type of art is origami?", "choices": ["Paper folding", "Clay sculpting", "Glass blowing", "Wood carving"], "answer": 0, "category": "Art", "difficulty": "easy"},
+    {"text": "Who painted 'The Birth of Venus'?", "choices": ["Raphael", "Botticelli", "Titian", "Caravaggio"], "answer": 1, "category": "Art", "difficulty": "hard"},
+    {"text": "Which Dutch artist is known for 'Girl with a Pearl Earring'?", "choices": ["Rembrandt", "Vermeer", "Hals", "Van Eyck"], "answer": 1, "category": "Art", "difficulty": "hard"},
+    {"text": "What style of art uses dots of color to form an image?", "choices": ["Cubism", "Pointillism", "Fauvism", "Minimalism"], "answer": 1, "category": "Art", "difficulty": "hard"},
+    {"text": "Who created the sculpture 'The Thinker'?", "choices": ["Michelangelo", "Bernini", "Rodin", "Donatello"], "answer": 2, "category": "Art", "difficulty": "medium"},
+    {"text": "Which Mexican artist is known for self-portraits?", "choices": ["Rivera", "Kahlo", "Orozco", "Tamayo"], "answer": 1, "category": "Art", "difficulty": "easy"},
+    {"text": "What period came after the Middle Ages in European art?", "choices": ["Baroque", "Renaissance", "Neoclassical", "Romantic"], "answer": 1, "category": "Art", "difficulty": "medium"},
+    {"text": "Who painted 'Water Lilies' series?", "choices": ["Renoir", "Monet", "Degas", "Pissarro"], "answer": 1, "category": "Art", "difficulty": "easy"},
+    {"text": "Which artist is known for his Blue Period?", "choices": ["Matisse", "Picasso", "Chagall", "Kandinsky"], "answer": 1, "category": "Art", "difficulty": "hard"},
+
+    {"text": "Which programming language was created by Guido van Rossum?", "choices": ["Java", "C++", "Python", "Ruby"], "answer": 2, "category": "Technology", "difficulty": "easy"},
+    {"text": "In which year was the first iPhone released?", "choices": ["2005", "2006", "2007", "2008"], "answer": 2, "category": "Technology", "difficulty": "medium"},
+    {"text": "What does HTML stand for?", "choices": ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"], "answer": 0, "category": "Technology", "difficulty": "easy"},
+    {"text": "What does CPU stand for?", "choices": ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Core Processing Unit"], "answer": 0, "category": "Technology", "difficulty": "easy"},
+    {"text": "Who founded Microsoft?", "choices": ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"], "answer": 1, "category": "Technology", "difficulty": "easy"},
+    {"text": "What does RAM stand for?", "choices": ["Read Access Memory", "Random Access Memory", "Run Application Memory", "Rapid Access Module"], "answer": 1, "category": "Technology", "difficulty": "easy"},
+    {"text": "Who co-founded Apple with Steve Jobs?", "choices": ["Bill Gates", "Steve Wozniak", "Tim Cook", "Larry Page"], "answer": 1, "category": "Technology", "difficulty": "medium"},
+    {"text": "What does USB stand for?", "choices": ["Universal Serial Bus", "United System Board", "Ultra Speed Bridge", "Universal Storage Base"], "answer": 0, "category": "Technology", "difficulty": "medium"},
+    {"text": "What year was the World Wide Web invented?", "choices": ["1985", "1989", "1993", "1995"], "answer": 1, "category": "Technology", "difficulty": "hard"},
+    {"text": "What programming language is primarily used for iOS development?", "choices": ["Java", "Kotlin", "Swift", "C#"], "answer": 2, "category": "Technology", "difficulty": "medium"},
+    {"text": "What does GPS stand for?", "choices": ["Global Positioning System", "General Processing System", "Global Program Software", "Guided Position Satellite"], "answer": 0, "category": "Technology", "difficulty": "easy"},
+    {"text": "Who invented the World Wide Web?", "choices": ["Vint Cerf", "Tim Berners-Lee", "Marc Andreessen", "Robert Kahn"], "answer": 1, "category": "Technology", "difficulty": "medium"},
+    {"text": "What does 'HTTP' stand for?", "choices": ["HyperText Transfer Protocol", "High Tech Transfer Program", "Home Text Transfer Protocol", "Hyper Tool Text Program"], "answer": 0, "category": "Technology", "difficulty": "medium"},
+    {"text": "Which company developed the Android operating system?", "choices": ["Apple", "Microsoft", "Google", "Samsung"], "answer": 2, "category": "Technology", "difficulty": "easy"},
+    {"text": "What is the name of the first programmable computer?", "choices": ["ENIAC", "Colossus", "Z3", "UNIVAC"], "answer": 2, "category": "Technology", "difficulty": "hard"},
+    {"text": "What does SSD stand for?", "choices": ["Super Speed Disk", "Solid State Drive", "System Storage Device", "Serial Signal Data"], "answer": 1, "category": "Technology", "difficulty": "medium"},
+    {"text": "Which language is known as the backbone of web development?", "choices": ["Python", "JavaScript", "C++", "Ruby"], "answer": 1, "category": "Technology", "difficulty": "medium"},
+    {"text": "What does AI stand for?", "choices": ["Automated Intelligence", "Artificial Intelligence", "Advanced Integration", "Applied Informatics"], "answer": 1, "category": "Technology", "difficulty": "easy"},
+    {"text": "Who is considered the father of computer science?", "choices": ["Von Neumann", "Turing", "Babbage", "Lovelace"], "answer": 1, "category": "Technology", "difficulty": "hard"},
+    {"text": "What was the first commercially successful smartphone?", "choices": ["iPhone", "BlackBerry", "Nokia N95", "Palm Treo"], "answer": 1, "category": "Technology", "difficulty": "hard"}
   ]
 }
