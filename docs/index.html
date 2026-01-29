@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGASURBVFhH7ZY9TsNAEIXnJ6FAQoKWgoYj0NJwBBoKJAoKTkBJQ0tDwxFoaGg4Ag0SBQUSEj8S38c+Z+14vWuvHamieFrZ3pn33szszgYhhBBCCCGE8B9IkqTX7/dfJ5NJG2PMMtNut/vY6XQum81mC89Go5GZ1+12+3mj0XiA7eVyOTefz2f7/f6T1Wr1PhqN3qfT6cR8Pj+bz+df4/F4slgs5pPJ5HM0Gn2Mx+OP+Xz+OZvNPhaLxed0Ov0YDAYfy+XyYz6ff87n8/fxePw+HA4/5vP5x3w+f5/NZu/j8fh9MBh8zGaz99ls9j4ejz+Gw+HHfD7/mM/n77PZ7H08Hr8Ph8P/Bf1+/3Wz2XweDodvq9XqbblcvvV6vbfVavW2WCze1uv122Kx+M8xHA5f1+v122g0epsv5m/z+fxtNBq9LRaLt81m87ZcLt82m83barV6WywWb+v1+m29Xr8tFou3zWbztlwu3zarzetyuXxbr9dvq9XqbbFYvK3X67fVavW2WCz+cwz/ALqA1u0P8gD+AAAAAElFTkSuQmCC">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div id="menu-screen" class="screen active">
+            <div class="banner">
+                <h1 class="title">QUIZ<span class="master">MASTER</span></h1>
+                <p class="subtitle">Test Your Knowledge Across 6 Categories!</p>
+                <p class="subtitle">360 Questions | 3 Difficulty Levels</p>
+            </div>
+            <div class="menu">
+                <button class="menu-btn start" onclick="showCategorySelect(false)">Start Quiz</button>
+                <button class="menu-btn timed" onclick="showCategorySelect(true)">Timed Quiz (15s)</button>
+                <button class="menu-btn leaderboard" onclick="showLeaderboard()">Leaderboard</button>
+                <button class="menu-btn help" onclick="showHelp()">How to Play</button>
+            </div>
+        </div>
+
+        <!-- Category Select -->
+        <div id="category-screen" class="screen">
+            <h2>Select Category</h2>
+            <div class="options" id="category-options"></div>
+            <button class="back-btn" onclick="showMenu()">Back</button>
+        </div>
+
+        <!-- Difficulty Select -->
+        <div id="difficulty-screen" class="screen">
+            <h2>Select Difficulty</h2>
+            <div class="options">
+                <button class="option-btn easy" onclick="selectDifficulty('easy')">Easy<span class="desc">Warm up your brain</span></button>
+                <button class="option-btn medium" onclick="selectDifficulty('medium')">Medium<span class="desc">A fair challenge</span></button>
+                <button class="option-btn hard" onclick="selectDifficulty('hard')">Hard<span class="desc">For true masters</span></button>
+            </div>
+            <button class="back-btn" onclick="showCategorySelect(gameState.timed)">Back</button>
+        </div>
+
+        <!-- Question Count -->
+        <div id="count-screen" class="screen">
+            <h2>How Many Questions?</h2>
+            <p class="available-count">Available: <span id="available-questions">20</span></p>
+            <div class="count-selector">
+                <button class="count-btn" onclick="changeCount(-5)">-5</button>
+                <span class="count-display" id="question-count">10</span>
+                <button class="count-btn" onclick="changeCount(5)">+5</button>
+            </div>
+            <button class="menu-btn start" onclick="startQuiz()">Start!</button>
+            <button class="back-btn" onclick="showDifficultySelect()">Back</button>
+        </div>
+
+        <!-- Countdown -->
+        <div id="countdown-screen" class="screen">
+            <div class="countdown-display" id="countdown-number">3</div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span class="question-num">Question <span id="current-q">1</span>/<span id="total-q">10</span></span>
+                <span class="difficulty-badge" id="q-difficulty">EASY</span>
+            </div>
+            <div id="timer-bar" class="timer-bar hidden">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+            <div class="question-text" id="question-text"></div>
+            <div class="choices" id="choices"></div>
+            <div class="score-bar">
+                <span>Score: <span id="current-score">0</span>/<span id="score-total">0</span></span>
+                <span>Points: <span id="points">0</span></span>
+                <span id="streak-display" class="hidden">Streak: <span id="streak">0</span></span>
+            </div>
+        </div>
+
+        <!-- Feedback Screen -->
+        <div id="feedback-screen" class="screen">
+            <div id="feedback-content"></div>
+            <button class="menu-btn" id="next-btn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h2>Game Over!</h2>
+            <div class="stars" id="stars"></div>
+            <div class="grade" id="grade"></div>
+            <div class="results-stats">
+                <p>Final Score: <span id="final-score">0</span>/<span id="final-total">0</span> (<span id="percentage">0</span>%)</p>
+                <p>Total Points: <span id="final-points">0</span></p>
+                <p>Best Streak: <span id="final-streak">0</span></p>
+            </div>
+            <div class="name-input">
+                <input type="text" id="player-name" placeholder="Enter your name" maxlength="15">
+                <button class="menu-btn" onclick="saveScore()">Save Score</button>
+            </div>
+            <button class="back-btn" onclick="showMenu()">Main Menu</button>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboard-screen" class="screen">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-list" id="leaderboard-list"></div>
+            <button class="back-btn" onclick="showMenu()">Back</button>
+        </div>
+
+        <!-- Help Screen -->
+        <div id="help-screen" class="screen">
+            <h2>How to Play</h2>
+            <div class="help-content">
+                <div class="help-section">
+                    <h3>Game Rules</h3>
+                    <p>1. Choose a category or play all</p>
+                    <p>2. Select your difficulty level</p>
+                    <p>3. Pick how many questions</p>
+                    <p>4. Tap the correct answer</p>
+                    <p>5. Your score is saved!</p>
+                </div>
+                <div class="help-section">
+                    <h3>Scoring System</h3>
+                    <p><span class="green">Base:</span> 10 points per correct answer</p>
+                    <p><span class="yellow">Difficulty:</span> Easy x1 | Medium x2 | Hard x3</p>
+                    <p><span class="red">Streak:</span> Up to +25 points for consecutive wins</p>
+                </div>
+                <div class="help-section">
+                    <h3>Categories</h3>
+                    <p>Geography | Science | History</p>
+                    <p>Literature | Art | Technology</p>
+                </div>
+            </div>
+            <button class="back-btn" onclick="showMenu()">Back</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
