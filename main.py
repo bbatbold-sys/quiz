@@ -5,7 +5,8 @@ from display import (
     banner, print_menu, get_input, print_header, print_correct, print_wrong,
     _print, clear_screen, print_box, print_question_box, print_choices,
     print_score_bar, print_results, print_countdown, print_loading,
-    print_welcome_animation, CYAN, RESET, BOLD, YELLOW, GREEN, RED, MAGENTA, WHITE, DIM
+    print_welcome_animation, print_player_turn, print_multiplayer_results,
+    CYAN, RESET, BOLD, YELLOW, GREEN, RED, MAGENTA, WHITE, DIM
 )
 from questions import (
     load_questions, get_categories, get_difficulties,
@@ -221,6 +222,118 @@ def play_quiz(timed: bool = False):
         time.sleep(1)
 
 
+def run_player_quiz(player_name: str, player_num: int, questions: list,
+                    difficulty: str) -> tuple:
+    """Run a quiz for one player in multiplayer. Returns (correct, points, best_streak)."""
+    tracker = ScoreTracker()
+
+    clear_screen()
+    print_player_turn(player_name, player_num)
+    get_input("Press ENTER when ready...")
+    print_countdown(3)
+
+    for i, q in enumerate(questions, 1):
+        clear_screen()
+        _print(f"\n    {CYAN}{BOLD}Player {player_num}: {player_name}{RESET}\n")
+        print_question_box(i, len(questions), q.text, q.difficulty)
+        print_choices(q.choices)
+
+        choice_idx = get_choice("Your answer:", len(q.choices)) - 1
+        correct = q.check(choice_idx)
+        details = tracker.record(correct, q.difficulty)
+
+        if correct:
+            print_correct()
+            _print(f"    {GREEN}{BOLD}+{details['points_earned']} points{RESET}")
+        else:
+            print_wrong(q.correct_answer)
+
+        print_score_bar(tracker.correct, tracker.total, tracker.points, tracker.streak)
+
+        if i < len(questions):
+            get_input("Press ENTER for next question...")
+
+    return tracker.correct, tracker.points, tracker.best_streak
+
+
+def play_multiplayer():
+    """Run a 2-player multiplayer quiz session."""
+    clear_screen()
+    print_header("MULTIPLAYER MODE")
+    _print(f"    {CYAN}Two players will answer the same questions.{RESET}")
+    _print(f"    {CYAN}Player 1 goes first, then Player 2.{RESET}")
+    _print(f"    {CYAN}Highest points wins!{RESET}\n")
+
+    # Get player names
+    p1_name = get_input("Enter Player 1 name:").strip() or "Player 1"
+    p2_name = get_input("Enter Player 2 name:").strip() or "Player 2"
+
+    print_loading("Loading questions", 0.5)
+    questions = load_questions()
+
+    # Choose category
+    clear_screen()
+    categories = get_categories(questions)
+    print_header("SELECT CATEGORY")
+    all_options = ["All Categories"] + categories
+    print_menu(all_options)
+    cat_idx = get_choice("Enter your choice:", len(all_options), default=1)
+    category = None if cat_idx == 1 else categories[cat_idx - 2]
+
+    # Choose difficulty
+    clear_screen()
+    print_header("SELECT DIFFICULTY")
+    difficulties = get_difficulties()
+    diff_display = [
+        f"{GREEN}Easy{RESET}    - Warm up your brain",
+        f"{YELLOW}Medium{RESET}  - A fair challenge",
+        f"{RED}Hard{RESET}    - For true masters"
+    ]
+    for i, d in enumerate(diff_display, 1):
+        _print(f"      {YELLOW}{BOLD}[{i}]{RESET} {d}")
+    print()
+    diff_idx = get_choice("Enter your choice:", 3, default=1)
+    difficulty = difficulties[diff_idx - 1]
+
+    # Filter and pick questions
+    pool = filter_questions(questions, category, difficulty)
+    if not pool:
+        _print(f"\n    {RED}No questions match your filters. Try again.{RESET}\n")
+        time.sleep(1.5)
+        return
+
+    # Ask how many questions
+    clear_screen()
+    print_header("HOW MANY QUESTIONS?")
+    _print(f"    {DIM}Available: {len(pool)} questions{RESET}\n")
+    default_count = min(10, len(pool))
+    count = get_choice(f"Enter number (1-{len(pool)}, default {default_count}):",
+                       len(pool), default=default_count)
+
+    selected = pick_questions(pool, count)
+
+    # Player 1's turn
+    _print(f"\n    {YELLOW}{BOLD}Player 2 ({p2_name}): Please look away!{RESET}\n")
+    time.sleep(2)
+    p1_correct, p1_points, p1_streak = run_player_quiz(p1_name, 1, selected, difficulty)
+
+    # Transition
+    clear_screen()
+    _print(f"\n    {GREEN}{BOLD}{p1_name} has finished!{RESET}")
+    _print(f"\n    {YELLOW}{BOLD}Now it's {p2_name}'s turn.{RESET}")
+    _print(f"\n    {YELLOW}{BOLD}Player 1 ({p1_name}): Please look away!{RESET}\n")
+    get_input("Press ENTER when Player 2 is ready...")
+
+    # Player 2's turn
+    p2_correct, p2_points, p2_streak = run_player_quiz(p2_name, 2, selected, difficulty)
+
+    # Show results
+    print_multiplayer_results(p1_name, p1_correct, p1_points,
+                              p2_name, p2_correct, p2_points, len(selected))
+
+    get_input("Press ENTER to continue...")
+
+
 def show_high_scores():
     """Display the leaderboard."""
     clear_screen()
@@ -270,9 +383,10 @@ def main():
     menu_options = [
         f"{GREEN}Start Quiz{RESET}      - Normal mode, take your time",
         f"{RED}Timed Quiz{RESET}      - 15 seconds per question!",
+        f"{MAGENTA}Multiplayer{RESET}     - 2 Player Battle",
         f"{YELLOW}Leaderboard{RESET}     - View top scores",
         f"{CYAN}Statistics{RESET}      - Your performance stats",
-        f"{MAGENTA}How to Play{RESET}     - Game instructions",
+        f"{WHITE}How to Play{RESET}     - Game instructions",
         f"{DIM}Quit{RESET}            - Exit the game"
     ]
 
@@ -288,12 +402,14 @@ def main():
         elif choice == "2":
             play_quiz(timed=True)
         elif choice == "3":
-            show_high_scores()
+            play_multiplayer()
         elif choice == "4":
-            show_stats()
+            show_high_scores()
         elif choice == "5":
-            show_help()
+            show_stats()
         elif choice == "6":
+            show_help()
+        elif choice == "7":
             clear_screen()
             _print(f"""
 {CYAN}{BOLD}
