@@ -275,3 +275,74 @@ def print_welcome_animation():
         sys.stdout.flush()
         time.sleep(0.1)
     print("\n")
+
+
+def print_player_turn(name: str, player_num: int):
+    """Print player turn announcement for multiplayer."""
+    color = CYAN if player_num == 1 else MAGENTA
+    _print(f"""
+{color}{BOLD}
+    +==================================================+
+    |                                                  |
+    |           PLAYER {player_num}: {name.upper().center(24)}       |
+    |                                                  |
+    |              Get ready for your turn!            |
+    |                                                  |
+    +==================================================+
+{RESET}""")
+
+
+def print_multiplayer_results(p1_name: str, p1_score: int, p1_points: int,
+                              p2_name: str, p2_score: int, p2_points: int,
+                              total: int):
+    """Print multiplayer results comparison."""
+    clear_screen()
+
+    p1_pct = (p1_score / total * 100) if total > 0 else 0
+    p2_pct = (p2_score / total * 100) if total > 0 else 0
+
+    if p1_points > p2_points:
+        winner = p1_name
+        winner_color = CYAN
+    elif p2_points > p1_points:
+        winner = p2_name
+        winner_color = MAGENTA
+    else:
+        winner = "TIE"
+        winner_color = YELLOW
+
+    _print(f"""
+{YELLOW}{BOLD}
+    +==============================================================+
+    |                    MULTIPLAYER RESULTS                       |
+    +==============================================================+{RESET}
+
+    {CYAN}{BOLD}Player 1: {p1_name}{RESET}
+    Score: {p1_score}/{total} ({p1_pct:.0f}%)
+    Points: {YELLOW}{p1_points}{RESET}
+
+    {MAGENTA}{BOLD}Player 2: {p2_name}{RESET}
+    Score: {p2_score}/{total} ({p2_pct:.0f}%)
+    Points: {YELLOW}{p2_points}{RESET}
+
+{YELLOW}{BOLD}
+    +==============================================================+{RESET}
+""")
+
+    if winner == "TIE":
+        _print(f"""
+    {YELLOW}{BOLD}
+              IT'S A TIE!
+    {RESET}""")
+    else:
+        _print(f"""
+    {winner_color}{BOLD}
+    ██╗    ██╗██╗███╗   ██╗███╗   ██╗███████╗██████╗ ██╗
+    ██║    ██║██║████╗  ██║████╗  ██║██╔════╝██╔══██╗██║
+    ██║ █╗ ██║██║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝██║
+    ██║███╗██║██║██║╚██╗██║██║╚██╗██║██╔══╝  ██╔══██╗╚═╝
+    ╚███╔███╔╝██║██║ ╚████║██║ ╚████║███████╗██║  ██║██╗
+     ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝
+
+                    {winner.upper()} WINS!
+    {RESET}""")
