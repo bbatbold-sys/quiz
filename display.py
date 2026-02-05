@@ -72,8 +72,8 @@ def banner():
     ||                                                            ||
     ================================================================
 {RESET}
-{DIM}                     Test Your Knowledge Across 6 Categories!{RESET}
-{DIM}                        360 Questions | 3 Difficulty Levels{RESET}
+{DIM}                    Test Your Knowledge Across 10 Categories!{RESET}
+{DIM}                        600 Questions | 3 Difficulty Levels{RESET}
 """
     _print(art)
 

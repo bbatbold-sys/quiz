@@ -62,8 +62,9 @@ def show_help():
     ║                  CATEGORIES                           ║
     ╠═══════════════════════════════════════════════════════╣{RESET}
 
-    {MAGENTA}Geography{RESET} | {CYAN}Science{RESET} | {YELLOW}History{RESET}
-    {GREEN}Literature{RESET} | {RED}Art{RESET} | {BOLD}Technology{RESET}
+    {MAGENTA}Geography{RESET} | {CYAN}Science{RESET} | {YELLOW}History{RESET} | {GREEN}Literature{RESET}
+    {RED}Art{RESET} | {BOLD}Technology{RESET} | {YELLOW}Sports{RESET} | {MAGENTA}Music{RESET}
+    {CYAN}Movies{RESET} | {GREEN}Food{RESET}
 
 {CYAN}{BOLD}    ╚═══════════════════════════════════════════════════════╝{RESET}
 """)
