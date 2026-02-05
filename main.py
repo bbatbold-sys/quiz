@@ -12,6 +12,12 @@ from questions import (
     filter_questions, pick_questions
 )
 from scoring import ScoreTracker, save_high_score, get_top_scores
+from sounds import (
+    play_correct as sound_correct, play_wrong as sound_wrong,
+    play_countdown as sound_countdown, play_start as sound_start,
+    play_win as sound_win, play_timer_warning as sound_timer,
+    set_sound_enabled, is_sound_enabled
+)
 
 
 def get_choice(prompt: str, max_val: int, default: int | None = None) -> int:
@@ -165,6 +171,7 @@ def play_quiz(timed: bool = False):
     if timed:
         _print(f"    {BOLD}Mode:{RESET} {RED}TIMED (15s per question){RESET}")
     print_countdown(3)
+    sound_start()
 
     # Quiz loop
     for i, q in enumerate(selected, 1):
@@ -190,6 +197,7 @@ def play_quiz(timed: bool = False):
         details = tracker.record(correct, q.difficulty)
 
         if correct:
+            sound_correct()
             print_correct()
             bonus_parts = []
             if details["difficulty_bonus"]:
@@ -199,6 +207,7 @@ def play_quiz(timed: bool = False):
             bonus_str = f" ({', '.join(bonus_parts)})" if bonus_parts else ""
             _print(f"    {GREEN}{BOLD}+{details['points_earned']} points{bonus_str}{RESET}")
         else:
+            sound_wrong()
             print_wrong(q.correct_answer)
             if tracker.best_streak > 0:
                 _print(f"    {RED}Streak broken!{RESET}")
@@ -209,6 +218,7 @@ def play_quiz(timed: bool = False):
             get_input("Press ENTER for next question...")
 
     # Final results
+    sound_win()
     print_results(tracker.correct, tracker.total, tracker.points,
                   tracker.best_streak, tracker.percentage)
 
@@ -265,21 +275,26 @@ def main():
     """Main menu loop."""
     banner()
     print_welcome_animation()
+    sound_start()
     time.sleep(0.5)
-
-    menu_options = [
-        f"{GREEN}Start Quiz{RESET}      - Normal mode, take your time",
-        f"{RED}Timed Quiz{RESET}      - 15 seconds per question!",
-        f"{YELLOW}Leaderboard{RESET}     - View top scores",
-        f"{CYAN}Statistics{RESET}      - Your performance stats",
-        f"{MAGENTA}How to Play{RESET}     - Game instructions",
-        f"{DIM}Quit{RESET}            - Exit the game"
-    ]
 
     while True:
         clear_screen()
         banner()
         print_header("MAIN MENU")
+
+        # Build menu with dynamic sound status
+        sound_status = f"{GREEN}ON{RESET}" if is_sound_enabled() else f"{RED}OFF{RESET}"
+        menu_options = [
+            f"{GREEN}Start Quiz{RESET}      - Normal mode, take your time",
+            f"{RED}Timed Quiz{RESET}      - 15 seconds per question!",
+            f"{YELLOW}Leaderboard{RESET}     - View top scores",
+            f"{CYAN}Statistics{RESET}      - Your performance stats",
+            f"{MAGENTA}How to Play{RESET}     - Game instructions",
+            f"{WHITE}Sound{RESET}           - Toggle sound [{sound_status}]",
+            f"{DIM}Quit{RESET}            - Exit the game"
+        ]
+
         print_menu(menu_options)
         choice = get_input("Enter your choice:")
 
@@ -294,6 +309,14 @@ def main():
         elif choice == "5":
             show_help()
         elif choice == "6":
+            # Toggle sound
+            set_sound_enabled(not is_sound_enabled())
+            status = "enabled" if is_sound_enabled() else "disabled"
+            _print(f"\n    {CYAN}Sound effects {status}!{RESET}")
+            if is_sound_enabled():
+                sound_correct()  # Play a sample sound
+            time.sleep(0.8)
+        elif choice == "7":
             clear_screen()
             _print(f"""
 {CYAN}{BOLD}
