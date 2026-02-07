@@ -254,6 +254,34 @@ def print_loading(text: str = "Loading", duration: float = 1.0):
     sys.stdout.flush()
 
 
+def print_lives(lives: int, max_lives: int = 3):
+    """Print remaining lives display."""
+    hearts = f"{RED}♥{RESET}" * lives + f"{DIM}♡{RESET}" * (max_lives - lives)
+    _print(f"\n    {BOLD}Lives:{RESET} {hearts}\n")
+
+
+def print_challenge_over(correct: int, points: int, streak: int):
+    """Print challenge mode game over screen."""
+    art = f"""
+{RED}{BOLD}
+    ╔═══════════════════════════════════════════════════════╗
+    ║                                                       ║
+    ║              CHALLENGE OVER - NO LIVES LEFT           ║
+    ║                                                       ║
+    ╠═══════════════════════════════════════════════════════╣{RESET}
+
+    {BOLD}          Questions Survived:{RESET} {GREEN}{correct}{RESET}
+
+    {BOLD}          Total Points:{RESET}      {CYAN}{points}{RESET}
+
+    {BOLD}          Best Streak:{RESET}       {YELLOW}{streak}{RESET}
+{RED}{BOLD}
+    ╚═══════════════════════════════════════════════════════╝
+{RESET}
+"""
+    _print(art)
+
+
 def print_welcome_animation():
     """Print welcome animation."""
     frames = [
