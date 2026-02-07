@@ -5,6 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 SCORES_FILE = Path(__file__).parent / "data" / "scores.json"
+HISTORY_FILE = Path(__file__).parent / "data" / "history.json"
 
 DIFFICULTY_MULTIPLIER = {"easy": 1, "medium": 2, "hard": 3}
 
@@ -86,3 +87,30 @@ def save_high_score(name: str, score: int, total: int, category: str,
 def get_top_scores(n: int = 5) -> list[dict]:
     """Return top n scores."""
     return load_high_scores()[:n]
+
+
+def save_game_history(name: str, score: int, total: int, category: str,
+                      points: int = 0, best_streak: int = 0):
+    """Save a game to the history log (keeps all games)."""
+    history = load_game_history()
+    history.append({
+        "name": name,
+        "score": score,
+        "total": total,
+        "percentage": round((score / total) * 100, 1) if total else 0,
+        "points": points,
+        "best_streak": best_streak,
+        "category": category,
+        "date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    })
+    HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2)
+
+
+def load_game_history() -> list[dict]:
+    """Load full game history from file."""
+    if not HISTORY_FILE.exists():
+        return []
+    with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)

@@ -12,7 +12,7 @@ from questions import (
     load_questions, get_categories, get_difficulties,
     filter_questions, pick_questions
 )
-from scoring import ScoreTracker, save_high_score, get_top_scores
+from scoring import ScoreTracker, save_high_score, get_top_scores, save_game_history, load_game_history
 
 
 def get_choice(prompt: str, max_val: int, default: int | None = None) -> int:
@@ -218,6 +218,8 @@ def play_quiz(timed: bool = False):
     if name.strip():
         save_high_score(name.strip(), tracker.correct, tracker.total, cat_label,
                         tracker.points, tracker.best_streak)
+        save_game_history(name.strip(), tracker.correct, tracker.total, cat_label,
+                          tracker.points, tracker.best_streak)
         _print(f"\n    {GREEN}{BOLD}Score saved to leaderboard!{RESET}\n")
         time.sleep(1)
 
@@ -301,8 +303,50 @@ def play_challenge():
     if name.strip():
         save_high_score(name.strip(), tracker.correct, tracker.total, cat_label,
                         tracker.points, tracker.best_streak)
+        save_game_history(name.strip(), tracker.correct, tracker.total, cat_label,
+                          tracker.points, tracker.best_streak)
         _print(f"\n    {GREEN}{BOLD}Score saved to leaderboard!{RESET}\n")
         time.sleep(1)
+
+
+def show_history():
+    """Display full game history."""
+    clear_screen()
+    history = load_game_history()
+
+    _print(f"""
+{MAGENTA}{BOLD}
+    +===============================================================+
+    |                       GAME HISTORY                              |
+    +===============================================================+{RESET}
+""")
+
+    if not history:
+        _print(f"    {DIM}No games played yet. Start playing to build your history!{RESET}")
+    else:
+        _print(f"    {BOLD}{'#':<4}{'Date':<18}{'Name':<12}{'Score':<10}{'Points':<10}{'Category'}{RESET}")
+        _print(f"    {'-' * 68}")
+        # Show most recent games first
+        for i, g in enumerate(reversed(history[-20:]), 1):
+            pct = g.get('percentage', 0)
+            if pct >= 80:
+                color = GREEN
+            elif pct >= 50:
+                color = YELLOW
+            else:
+                color = RED
+            _print(f"    {DIM}{i:<4}{RESET}"
+                   f"{g.get('date', 'N/A'):<18}"
+                   f"{g['name']:<12}"
+                   f"{color}{g['score']}/{g['total']} ({pct}%){RESET}  "
+                   f"{CYAN}{g.get('points', 0):<10}{RESET}"
+                   f"{g['category']}")
+
+    _print(f"""
+{MAGENTA}{BOLD}
+    +===============================================================+{RESET}
+""")
+    get_input("Press ENTER to go back...")
 
 
 def show_high_scores():
@@ -356,6 +400,7 @@ def main():
         f"{RED}Timed Quiz{RESET}      - 15 seconds per question!",
         f"{MAGENTA}Challenge Mode{RESET}  - 3 lives, survive as long as you can!",
         f"{YELLOW}Leaderboard{RESET}     - View top scores",
+        f"{MAGENTA}Game History{RESET}    - View your past games",
         f"{CYAN}Statistics{RESET}      - Your performance stats",
         f"{WHITE}How to Play{RESET}     - Game instructions",
         f"{DIM}Quit{RESET}            - Exit the game"
@@ -377,10 +422,12 @@ def main():
         elif choice == "4":
             show_high_scores()
         elif choice == "5":
-            show_stats()
+            show_history()
         elif choice == "6":
-            show_help()
+            show_stats()
         elif choice == "7":
+            show_help()
+        elif choice == "8":
             clear_screen()
             _print(f"""
 {CYAN}{BOLD}
