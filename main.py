@@ -5,7 +5,8 @@ from display import (
     banner, print_menu, get_input, print_header, print_correct, print_wrong,
     _print, clear_screen, print_box, print_question_box, print_choices,
     print_score_bar, print_results, print_countdown, print_loading,
-    print_welcome_animation, CYAN, RESET, BOLD, YELLOW, GREEN, RED, MAGENTA, WHITE, DIM
+    print_welcome_animation, print_lives, print_challenge_over,
+    CYAN, RESET, BOLD, YELLOW, GREEN, RED, MAGENTA, WHITE, DIM
 )
 from questions import (
     load_questions, get_categories, get_difficulties,
@@ -221,6 +222,89 @@ def play_quiz(timed: bool = False):
         time.sleep(1)
 
 
+def play_challenge():
+    """Run a challenge mode session: 3 lives, questions until you're out."""
+    clear_screen()
+    print_loading("Loading challenge", 0.5)
+
+    questions = load_questions()
+
+    # Choose category
+    categories = get_categories(questions)
+    print_header("CHALLENGE MODE - SELECT CATEGORY")
+    all_options = ["All Categories"] + categories
+    print_menu(all_options)
+    cat_idx = get_choice("Enter your choice:", len(all_options), default=1)
+    category = None if cat_idx == 1 else categories[cat_idx - 2]
+
+    # Get all questions for the category across all difficulties
+    pool = filter_questions(questions, category)
+    if not pool:
+        _print(f"\n    {RED}No questions available. Try again.{RESET}\n")
+        time.sleep(1.5)
+        return
+
+    import random
+    random.shuffle(pool)
+
+    lives = 3
+    tracker = ScoreTracker()
+
+    # Countdown
+    clear_screen()
+    cat_label = category or "All Categories"
+    _print(f"\n    {BOLD}Category:{RESET} {CYAN}{cat_label}{RESET}")
+    _print(f"    {BOLD}Mode:{RESET} {RED}CHALLENGE - 3 Lives{RESET}")
+    _print(f"    {BOLD}Questions:{RESET} {GREEN}{len(pool)} available{RESET}")
+    print_countdown(3)
+
+    for i, q in enumerate(pool, 1):
+        clear_screen()
+        print_lives(lives)
+        print_question_box(i, len(pool), q.text, q.difficulty)
+        print_choices(q.choices)
+
+        choice_idx = get_choice("Your answer:", len(q.choices)) - 1
+        correct = q.check(choice_idx)
+        details = tracker.record(correct, q.difficulty)
+
+        if correct:
+            print_correct()
+            bonus_parts = []
+            if details["difficulty_bonus"]:
+                bonus_parts.append(f"difficulty +{details['difficulty_bonus']}")
+            if details["streak_bonus"]:
+                bonus_parts.append(f"streak x{tracker.streak} +{details['streak_bonus']}")
+            bonus_str = f" ({', '.join(bonus_parts)})" if bonus_parts else ""
+            _print(f"    {GREEN}{BOLD}+{details['points_earned']} points{bonus_str}{RESET}")
+        else:
+            lives -= 1
+            print_wrong(q.correct_answer)
+            if lives > 0:
+                _print(f"    {RED}You lost a life! {lives} remaining.{RESET}")
+            else:
+                _print(f"    {RED}{BOLD}No lives remaining!{RESET}")
+
+        print_score_bar(tracker.correct, tracker.total, tracker.points, tracker.streak)
+
+        if lives <= 0:
+            break
+
+        if i < len(pool):
+            get_input("Press ENTER for next question...")
+
+    # Show results
+    clear_screen()
+    print_challenge_over(tracker.correct, tracker.points, tracker.best_streak)
+
+    name = get_input("Enter your name for the leaderboard:")
+    if name.strip():
+        save_high_score(name.strip(), tracker.correct, tracker.total, cat_label,
+                        tracker.points, tracker.best_streak)
+        _print(f"\n    {GREEN}{BOLD}Score saved to leaderboard!{RESET}\n")
+        time.sleep(1)
+
+
 def show_high_scores():
     """Display the leaderboard."""
     clear_screen()
@@ -270,9 +354,10 @@ def main():
     menu_options = [
         f"{GREEN}Start Quiz{RESET}      - Normal mode, take your time",
         f"{RED}Timed Quiz{RESET}      - 15 seconds per question!",
+        f"{MAGENTA}Challenge Mode{RESET}  - 3 lives, survive as long as you can!",
         f"{YELLOW}Leaderboard{RESET}     - View top scores",
         f"{CYAN}Statistics{RESET}      - Your performance stats",
-        f"{MAGENTA}How to Play{RESET}     - Game instructions",
+        f"{WHITE}How to Play{RESET}     - Game instructions",
         f"{DIM}Quit{RESET}            - Exit the game"
     ]
 
@@ -288,12 +373,14 @@ def main():
         elif choice == "2":
             play_quiz(timed=True)
         elif choice == "3":
-            show_high_scores()
+            play_challenge()
         elif choice == "4":
-            show_stats()
+            show_high_scores()
         elif choice == "5":
-            show_help()
+            show_stats()
         elif choice == "6":
+            show_help()
+        elif choice == "7":
             clear_screen()
             _print(f"""
 {CYAN}{BOLD}
